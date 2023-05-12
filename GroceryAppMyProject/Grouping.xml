@@ -1,0 +1,14 @@
+<suite name="My suiteProject1">
+	<test name="Mytest">
+		<parameter name="browser" value="chrome"></parameter>
+		<groups>
+			<run>
+				<include name="Critical"></include>
+				<include name="High"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="testCases.HomePageTestCase"></class>
+		</classes>
+	</test>
+</suite>
