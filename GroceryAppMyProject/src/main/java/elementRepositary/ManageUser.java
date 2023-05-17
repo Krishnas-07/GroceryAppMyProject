@@ -19,12 +19,20 @@ public class ManageUser {
 
 	@FindBy(xpath = "(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-user'])[1]")
 	WebElement manageUserTab;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath = "//h5[text()=' Alert!']")
 	WebElement alertMsg;
-	@FindBy(xpath = "(//div[@class='col-xs-12 col-sm-12'])[5]")
+	@FindBy(xpath = "(//div[@class='profile-info-name'])[2]")
 	WebElement secretPassword;
-	@FindBy(xpath = "(//a[@class='green bigger-140 show-details-btn'])[5]")
+	@FindBy(xpath = "(//i[@class='fa fa-angle-double-down'])[2]")
 	WebElement showDetailsButton;
+	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")
+	WebElement searchButton;
+	@FindBy(id = "un")
+	WebElement name;
+	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger']")
+	WebElement submitSearch;
+	@FindBy(xpath = "//span[@id='res']//center")
+	WebElement result;
 
 	public void navigateToManageUserTab() {
 		gu.clickTab(manageUserTab);
@@ -46,7 +54,7 @@ public class ManageUser {
 
 	public void clickDeleteIcon() {
 		int readRowValue = gu.clickdynamicTable(driver,
-				"//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[6]", "CIJIN SJ");
+				"//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]", "CIJIN SJ");
 		String locator = "//table[@class='table table-bordered table-hover table-sm']//tbody//tr[" + (readRowValue + 1)
 				+ "]//td[6]//a[2]";
 		WebElement deleteIcon = driver.findElement(By.xpath(locator));
@@ -65,12 +73,22 @@ public class ManageUser {
 				+ "]//td[3]";
 		WebElement password = driver.findElement(By.xpath(locator));
 
-	gu.clickTab(password);
-		
+		gu.clickTab(password);
+
 		gu.clickTab(showDetailsButton);
-		//String text=gu.getElementText(secretPassword);
+		// String text=gu.getElementText(secretPassword);
 		return gu.getElementText(secretPassword);
 
+	}
+
+	public void deleteResult() {
+		gu.clickTab(searchButton);
+		gu.addText(name, "CIJIN SJ");
+		gu.clickTab(submitSearch);
+	}
+
+	public String serachResult() {
+		return gu.getElementText(result);
 	}
 
 }

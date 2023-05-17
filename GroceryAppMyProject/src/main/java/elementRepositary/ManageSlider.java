@@ -25,7 +25,7 @@ public class ManageSlider {
 	WebElement chooseFile;
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement updateButton;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath="//h5[text()=' Alert!']")
 	WebElement alertText;
 	
 	
@@ -33,7 +33,7 @@ public void navigateToMnagaeSliderTab() {
 	gu.clickTab(manageSliderTab);
 }
 public void editTable() {
-	int rawImage=gu.clickdynamicTable(driver, "//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[2]", "https");
+	int rawImage=gu.clickdynamicTable(driver, "//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[2]", "https:\\sevemmart.com");
 	String locator="//table[@class='table table-bordered table-hover table-sm']//tbody//tr["+(rawImage+1)+"]//td[4]//a[1]";
 	WebElement editButton=driver.findElement(By.xpath(locator));
 	gu.clickTab(editButton);

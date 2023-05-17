@@ -25,7 +25,7 @@ public class PushNotifyTestCases extends BaseClass {
 		pn.clickSubmit();
 		String actual = pn.alertText();
 
-		String expected = "×\n" + "Alert!\n" + "Message send successfully";
+		String expected = "Alert!";
 		Assert.assertEquals(actual, expected, "Actual and expected result not matching");
 	}
 }

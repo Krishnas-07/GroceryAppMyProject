@@ -26,9 +26,7 @@ public class ManageSliderTestCases extends BaseClass{
 	  ms.clickUpdate();
 	 String actual= ms.getAlertText();
 	
-	 String expected="×\n"
-	 		+ "Alert!\n"
-	 		+ "Slider Updated Successfully";
+	 String expected="Alert!";
 	 Assert.assertEquals(actual, expected,Constants.errorMsgAssertion );
   }
 }

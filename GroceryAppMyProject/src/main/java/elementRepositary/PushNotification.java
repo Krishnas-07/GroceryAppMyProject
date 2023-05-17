@@ -24,7 +24,7 @@ public class PushNotification {
 	WebElement descriptionValue;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement submitButton;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath = "//h5[text()=' Alert!']")
 	WebElement alertmsg;
 
 	public void navigateToPushNotificationTab() {

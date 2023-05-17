@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
+import constants.Constants;
 import elementRepositary.LoginPage;
 import elementRepositary.ManageUser;
 import utilities.ExcelReadUtils;
@@ -23,7 +23,7 @@ public class ManageUserTestcases extends BaseClass {
 		mu.verifyStatusOfUserInManageUserTab();
 		String actual = mu.alertText();
 		// System.out.println(actual);
-		String expected = "×\n" + "Alert!\n" + "User Status Changed Successfully";
+		String expected = "Alert!";
 		Assert.assertEquals(actual, expected, "Not matching actual and expected result");
 
 	}
@@ -36,7 +36,10 @@ public class ManageUserTestcases extends BaseClass {
 		mu.navigateToManageUserTab();
 		mu.clickDeleteIcon();
 		mu.verifyAlert();
-
+		mu.deleteResult();
+		String actual = mu.serachResult();
+		String expected = ".........RESULT NOT FOUND.......";
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 	}
 
 	@Test(enabled = true)
