@@ -14,7 +14,7 @@ public class ManageUserTestcases extends BaseClass {
 	LoginPage lp;
 	ManageUser mu;
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void verifyStatusOfUserInManageUserTable() throws IOException {
 		lp = new LoginPage(driver);
 		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
@@ -28,7 +28,7 @@ public class ManageUserTestcases extends BaseClass {
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void verifyDeleteIconInManageUserTable() throws IOException {
 		lp = new LoginPage(driver);
 		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
