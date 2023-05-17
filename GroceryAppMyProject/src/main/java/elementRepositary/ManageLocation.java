@@ -45,6 +45,10 @@ public class ManageLocation {
 	public void clickSearchIcon() {
 		gu.clickTab(searchIcon);
 	}
+	public void checkLocation() {
+		gu.clickdynamicTable(driver, "//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]", "garden street");
+		
+	}
 	
 
 }

@@ -21,8 +21,10 @@ public class ManageUser {
 	WebElement manageUserTab;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alertMsg;
-	@FindBy(xpath="(//div[@class='profile-info-name'])[2]")
+	@FindBy(xpath = "(//div[@class='col-xs-12 col-sm-12'])[5]")
 	WebElement secretPassword;
+	@FindBy(xpath = "(//a[@class='green bigger-140 show-details-btn'])[5]")
+	WebElement showDetailsButton;
 
 	public void navigateToManageUserTab() {
 		gu.clickTab(manageUserTab);
@@ -56,13 +58,17 @@ public class ManageUser {
 		gu.alertmsg(driver);
 	}
 
-	public String viewPassword() {
+	public String viewPassword() throws InterruptedException {
 		int passwordView = gu.clickdynamicTable(driver,
 				"//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]", "Anandhu Prakash");
 		String locator = "//table[@class='table table-bordered table-hover table-sm']//tbody//tr[" + (passwordView + 1)
 				+ "]//td[3]";
 		WebElement password = driver.findElement(By.xpath(locator));
-		gu.clickTab(password);
+
+	gu.clickTab(password);
+		
+		gu.clickTab(showDetailsButton);
+		//String text=gu.getElementText(secretPassword);
 		return gu.getElementText(secretPassword);
 
 	}

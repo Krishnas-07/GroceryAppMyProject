@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import elementRepositary.LoginPage;
 import elementRepositary.ManageLocation;
 
-public class ManageLocationTestcases extends BaseClass {
+public class ManageLocationTestcases extends BaseClass{
 	LoginPage lp;
 	ManageLocation ml;
 

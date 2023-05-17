@@ -17,8 +17,6 @@ import org.testng.annotations.Parameters;
 
 import utilities.ScreenshotUtils;
 
-
-
 public class BaseClass {
 	WebDriver driver;
 	ScreenshotUtils sc;
@@ -47,7 +45,7 @@ public class BaseClass {
 		} else if (browser.equals("edge")) {
 			System.setProperty("webdriver.edge.driver",
 					"C:\\Users\\KPS\\Downloads\\edgedriver_win64\\msedgedriver.exe");
-			driver = new EdgeDriver();//run time polymorphism
+			driver = new EdgeDriver();// run time polymorphism
 		}
 		driver.get(prop.getProperty("BaseURL"));// --> login page
 
