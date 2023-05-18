@@ -2,7 +2,7 @@
 	<test name="ChromeTest">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="testCases.ManageSliderTestCases"></class>
+			<class name="testCases.ManageExpenseTestcase"></class>
 		</classes>
 	</test>
 </suite>
