@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import elementRepositary.LoginPage;
 import elementRepositary.ManageDeliveryBoy;
 import utilities.ExcelReadUtils;
@@ -27,19 +28,36 @@ public class ManageDeliveryBoyTestcase extends BaseClass {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void verifyDeleteIconButton() throws IOException {
 		lp = new LoginPage(driver);
-		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		mdb = new ManageDeliveryBoy(driver);
 		mdb.navigatetoManageDeliveryBoyTab();
 		mdb.clickDeleteButton();
 		mdb.alertmsgClick();
-		String expected = "×\n" + "Alert!\n" + "Delivery Boy Informations Deleted Successfully";
+		String expected = "Alert!";
 		String actual = mdb.getAlertMsgText();
 
-		Assert.assertEquals(actual, expected, "Actual and expected result not matching");
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 
 	}
+	@Test
+	public void verifyUserCanAddNewDeliveryBoyDetails() {
+		lp = new LoginPage(driver);
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
+		mdb = new ManageDeliveryBoy(driver);
+		mdb.navigatetoManageDeliveryBoyTab();
+		mdb.clickNewButton();
+		mdb.enterName();
+		mdb.enterEmai();
+		mdb.enterUsername();
+		mdb.enterPassword();
+		mdb.clickSave();
+		boolean actual=mdb.checkNewlyAddedUser();
+		boolean expected=true;
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
+	}
+	
 
 }

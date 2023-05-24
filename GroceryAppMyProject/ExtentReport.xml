@@ -6,6 +6,8 @@
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
 			<class name="testCases.LoginTestcases" />
+			<class name="testCases.PushNotifyTestCases"/>
+			<class name="testCases.VerifyUserTestcases"/>
 		</classes>
 	</test>
 </suite>

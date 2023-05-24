@@ -14,7 +14,7 @@ public class SettingTestCases extends BaseClass{
   @Test
   public void verifyManageMenuInSettingsTab() throws IOException {
 	  lp=new LoginPage(driver);
-	  lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
+	  lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 	  
 	  s=new Settings(driver);
 	  s.pageWaiting();

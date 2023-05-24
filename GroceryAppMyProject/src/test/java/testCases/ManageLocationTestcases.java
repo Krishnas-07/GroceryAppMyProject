@@ -1,11 +1,13 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import elementRepositary.LoginPage;
 import elementRepositary.ManageLocation;
 
-public class ManageLocationTestcases extends BaseClass{
+public class ManageLocationTestcases extends BaseClass {
 	LoginPage lp;
 	ManageLocation ml;
 
@@ -16,12 +18,15 @@ public class ManageLocationTestcases extends BaseClass{
 		lp.enterUsername("admin");
 		lp.enterPassword("admin");
 		lp.clickSignIn();
-		ml=new ManageLocation(driver);
+		ml = new ManageLocation(driver);
 		ml.clickManageLocationTab();
 		ml.clickSearchButton();
 		ml.selectCountry();
 		ml.selectLocation();
 		ml.clickSearchIcon();
-		//add assertion
+		boolean actual = ml.checkLocation();
+
+		boolean expected = true;
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 	}
 }

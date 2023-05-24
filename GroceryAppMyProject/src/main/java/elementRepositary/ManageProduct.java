@@ -42,7 +42,7 @@ public class ManageProduct {
 	@FindBy(id = "cat_id")
 	WebElement category;
 
-	@FindBy(xpath = "//button[@name='update']")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement updateButton;
 
 	public void clickManageProductTab() {
@@ -90,6 +90,7 @@ public class ManageProduct {
 	}
 
 	public void clickUpdateButton() {
+		gu.pageScrollDown(driver, 0, 100);
 		gu.clickTab(updateButton);
 	}
 

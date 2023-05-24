@@ -15,8 +15,8 @@ public class LoginTestcases extends BaseClass {
 	@Test(enabled = true)
 	public void verifySignInButtonisClickable() throws IOException {
 		lp = new LoginPage(driver);
-		lp.enterUsername(ExcelReadUtils.read(1, 0));
-		lp.enterPassword(ExcelReadUtils.read(1, 1));
+		lp.enterUsername(ExcelReadUtils.read("Sheet1",1, 0));
+		lp.enterPassword(ExcelReadUtils.read("Sheet1",1, 1));
 		lp.clickSignIn();
 		String expected = "Home";
 		String actual = lp.homeButtonText();
@@ -38,6 +38,20 @@ public class LoginTestcases extends BaseClass {
 		String actual = lp.backgroundColourOfSignInButton();
 		String expected = Constants.loginButtonBackGroundColour;
 		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
+
+	}
+
+	@Test(enabled = false, dataProvider = "loginSucess", dataProviderClass = DataProviderTestcase.class)
+	public void verifyTheAlertMessageforWrongUserDetails(String name, String name1) {
+		lp = new LoginPage(driver);
+		lp.performLogin(name, name1);
+		String actual=lp.alertText();
+		System.out.println(actual);
+		String expected="×\n"
+				+ "Alert!\n"
+				+ "Invalid Username/Password";
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
+		
 
 	}
 

@@ -25,7 +25,8 @@ public class LoginPage {
 
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement signIn;
-
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
+WebElement alert;
 	public void enterUsername(String name) {
 		userName.sendKeys(name);
 	}
@@ -57,4 +58,7 @@ public class LoginPage {
 	enterPassword(name1);
 	clickSignIn();
 }
+	public String alertText() {
+		return gu.getElementText(alert);
+	}
 }

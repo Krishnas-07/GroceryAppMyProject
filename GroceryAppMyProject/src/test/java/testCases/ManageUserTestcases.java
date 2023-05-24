@@ -17,7 +17,7 @@ public class ManageUserTestcases extends BaseClass {
 	@Test(enabled = true)
 	public void verifyStatusOfUserInManageUserTable() throws IOException {
 		lp = new LoginPage(driver);
-		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		mu = new ManageUser(driver);
 		mu.navigateToManageUserTab();
 		mu.verifyStatusOfUserInManageUserTab();
@@ -31,7 +31,7 @@ public class ManageUserTestcases extends BaseClass {
 	@Test(enabled = true)
 	public void verifyDeleteIconInManageUserTable() throws IOException {
 		lp = new LoginPage(driver);
-		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		mu = new ManageUser(driver);
 		mu.navigateToManageUserTab();
 		mu.clickDeleteIcon();
@@ -45,7 +45,7 @@ public class ManageUserTestcases extends BaseClass {
 	@Test(enabled = true)
 	public void verifyPassword() throws IOException, InterruptedException {
 		lp = new LoginPage(driver);
-		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		mu = new ManageUser(driver);
 		mu.navigateToManageUserTab();
 		Thread.sleep(2000);

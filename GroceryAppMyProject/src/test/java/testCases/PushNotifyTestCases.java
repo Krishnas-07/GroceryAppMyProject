@@ -17,7 +17,7 @@ public class PushNotifyTestCases extends BaseClass {
 	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void verify() throws IOException {
 		lp = new LoginPage(driver);
-		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		pn = new PushNotification(driver);
 		pn.navigateToPushNotificationTab();
 		pn.enterTitle();

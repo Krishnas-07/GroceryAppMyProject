@@ -2,7 +2,9 @@
 	<test name="ChromeTest">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="testCases.LoginTestcases"></class>
+			<class name="testCases.LoginTestcases"/>
+			<class name="testCases.ManageLocationTestcases"/>	
+			
 		</classes>
 	</test>
 	<test name="EdgeTest">

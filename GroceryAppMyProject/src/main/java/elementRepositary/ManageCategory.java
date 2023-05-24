@@ -23,7 +23,7 @@ public class ManageCategory {
 	WebElement manageCategory;
 	@FindBy(xpath = "(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'])[1]")
 	WebElement category;
-	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']//h5")
 	WebElement alertmsg;
 
 	public void navigatetoManageCategoryTab() {
@@ -36,7 +36,7 @@ public class ManageCategory {
 
 	public void activeButton() {
 		int value = gu.clickdynamicTable(driver,
-				"//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]", "Mediocre Linen Lamp");
+				"//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]", "Heavy duty Dress");
 		String locator = "//table[@class='table table-bordered table-hover table-sm']//tbody//tr[" + (value + 1)
 				+ "]//td[3]";
 		WebElement activateButton = driver.findElement(By.xpath(locator));
