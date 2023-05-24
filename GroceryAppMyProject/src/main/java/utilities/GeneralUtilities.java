@@ -88,4 +88,7 @@ public class GeneralUtilities {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
+	public void sleepingTym() throws InterruptedException {
+		Thread.sleep(2000);
+	}
 }
