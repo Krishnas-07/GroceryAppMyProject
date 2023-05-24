@@ -64,7 +64,7 @@ public class ManageDeliveryBoy {
 	public void clickDeleteButton() {
 		int rowValue = gu.clickdynamicTable(driver,
 				"//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]",
-				"Ms. Robbie Satterfield");
+				"Alvera Hilpert");
 		String locator = "//table[@class='table table-bordered table-hover table-sm']//tbody//tr[" + (rowValue + 1)
 				+ "]//td[8]//a[2]";
 		WebElement deleteIconActivate = driver.findElement(By.xpath(locator));

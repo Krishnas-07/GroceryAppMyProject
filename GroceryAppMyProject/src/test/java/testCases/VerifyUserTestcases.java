@@ -17,7 +17,7 @@ public class VerifyUserTestcases extends BaseClass {
 	@Test
 	public void verifyTheSearchTabInVerifyUserTab() throws IOException {
 		lp = new LoginPage(driver);
-		lp.performLogin(ExcelReadUtils.read(1, 0), ExcelReadUtils.read(1, 1));
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		vu = new VerifyUser(driver);
 		vu.navigateToVerifyUser();
 		// vu.selectingUser();

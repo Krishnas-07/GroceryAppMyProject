@@ -14,7 +14,7 @@ public class ManageDeliveryBoyTestcase extends BaseClass {
 	LoginPage lp;
 	ManageDeliveryBoy mdb;
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void verifyTheHeadingTextOfEditDeliveryBoyPage() {
 		lp = new LoginPage(driver);
 		lp.performLogin("admin", "admin");

@@ -26,7 +26,7 @@ public class ManageProductTestcases extends BaseClass {
 		Assert.assertEquals(actual, expected, "There is no dropdown to select");
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void verifyUpdateButtonisEnabled() {
 		lp = new LoginPage(driver);
 		lp.performLogin(ExcelReadUtils.read("Sheet1", 1, 0),ExcelReadUtils.read("Sheet1", 1, 1));
