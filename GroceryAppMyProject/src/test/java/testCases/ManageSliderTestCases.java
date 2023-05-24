@@ -27,7 +27,7 @@ public class ManageSliderTestCases extends BaseClass{
 	  ms.clickUpdate();
 	 String actual= ms.getAlertText();
 	System.out.println(actual);
-	 String expected="Image is too large of a file.";
+	 String expected=Constants.manageLargeImage;
 	 Assert.assertEquals(actual, expected,Constants.errorMsgAssertion );
   }
   @Test(retryAnalyzer = RetryAnalyzer.class)

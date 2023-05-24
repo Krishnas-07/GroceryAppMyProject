@@ -23,6 +23,8 @@ public class ManageCategory {
 	WebElement manageCategory;
 	@FindBy(xpath = "(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'])[1]")
 	WebElement category;
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/status?id=215&st=active&page_ad=1']//span")
+	WebElement statusBar;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']//h5")
 	WebElement alertmsg;
 
@@ -41,6 +43,8 @@ public class ManageCategory {
 				+ "]//td[3]";
 		WebElement activateButton = driver.findElement(By.xpath(locator));
 		gu.clickTab(activateButton);
+		gu.clickTab(statusBar);
+		
 	}
 
 	public String alertText() {

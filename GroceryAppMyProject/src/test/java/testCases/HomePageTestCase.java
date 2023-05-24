@@ -3,8 +3,10 @@ package testCases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import elementRepositary.HomePage;
 import elementRepositary.LoginPage;
+import utilities.ExcelReadUtils;
 
 public class HomePageTestCase extends BaseClass {
 	LoginPage lp;
@@ -13,27 +15,27 @@ public class HomePageTestCase extends BaseClass {
 	@Test(groups={"Critical"})
 	public void verifyBackgroundColourOfMangeExpenseTabInHomePage() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(ExcelReadUtils.read("Sheet1", 1, 0));
+		lp.enterPassword(ExcelReadUtils.read("Sheet1", 1, 1));
 		lp.clickSignIn();
 		hp = new HomePage(driver);
 
 		String actual = hp.verifyBackgroundColourOfManageExpenseTab();
 
-		String expected = "rgba(0, 0, 0, 0.1)";
-		Assert.assertEquals(actual, expected, "Not matching actual and expected results");
+		String expected = Constants.backgroundColour;
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 	}
 
 	@Test(groups={"High"})
 	public void verifyTextOfManageExpenseTabInHomePage() {
 		lp = new LoginPage(driver);
-		lp.enterUsername("admin");
-		lp.enterPassword("admin");
+		lp.enterUsername(ExcelReadUtils.read("Sheet1", 1, 0));
+		lp.enterPassword(ExcelReadUtils.read("Sheet1", 1, 1));
 		lp.clickSignIn();
 		hp = new HomePage(driver);
 		String actual = hp.verifyTextOfManagePagesTab();
-		String expected = "More info";
-		Assert.assertEquals(actual, expected, "Actual and Expected result not matching");
+		String expected = Constants.HomePageExpectedResult;
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 	}
 
 }

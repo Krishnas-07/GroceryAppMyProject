@@ -20,9 +20,9 @@ public class ManageContent {
 
 	}
 
-	@FindBy(xpath = "(//a[@class='nav-link']//p)[7]")
+	@FindBy(xpath = "(//a[@class='nav-link']//p)[10]")
 	WebElement manageContent;
-	@FindBy(xpath = "(//a[@class='nav-link']//p)[8]")
+	@FindBy(xpath = "(//a[@class='nav-link']//p)[11]")
 	WebElement managePages;
 	@FindBy(id = "main_img")
 	WebElement chooseFile;
@@ -36,6 +36,12 @@ public class ManageContent {
 	}
 
 	public void navigateToManagePages() {
+		try {
+			gu.sleepingTym();
+		} catch (InterruptedException e) {
+		
+			e.printStackTrace();
+		}
 		gu.clickTab(managePages);
 	}
 
@@ -57,6 +63,11 @@ public class ManageContent {
 
 	public void clickSubmit() {
 		gu.pageScrollDown(driver, 0, 1000);
+		try {
+			gu.sleepingTym();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		gu.clickTab(submitButton);
 	}
 

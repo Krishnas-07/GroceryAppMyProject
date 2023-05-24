@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.ExcelReadUtils;
 import utilities.GeneralUtilities;
 
 public class PushNotification {
@@ -32,11 +33,11 @@ public class PushNotification {
 	}
 
 	public void enterTitle() {
-		gu.addText(titleValue, "Welcome to Application");
+		gu.addText(titleValue,ExcelReadUtils.read("PushNotification", 1, 0));
 	}
 
 	public void enterDescription() {
-		gu.addText(descriptionValue, "pls enter ur puchase item");
+		gu.addText(descriptionValue, ExcelReadUtils.read("PushNotification", 1, 1));
 	}
 
 	public void clickSubmit() {

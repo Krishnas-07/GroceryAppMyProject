@@ -86,7 +86,7 @@ public class ManageDeliveryBoy {
 	}
 
 	public void enterName() {
-		gu.addText(name, ExcelReadUtils.read("DeliveryBoy", 1, 0));
+		gu.addText(name, "Krishnan"+Math.random());
 	}
 
 	public void enterEmai() {
@@ -94,7 +94,7 @@ public class ManageDeliveryBoy {
 	}
 
 	public void enterUsername() {
-		gu.addText(userName, ExcelReadUtils.read("DeliveryBoy", 1, 4));
+		gu.addText(userName,"priya"+Math.random());
 	}
 
 	public void enterPassword() {

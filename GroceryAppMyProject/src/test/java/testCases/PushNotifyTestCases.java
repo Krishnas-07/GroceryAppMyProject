@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import elementRepositary.LoginPage;
 import elementRepositary.PushNotification;
 import utilities.ExcelReadUtils;
@@ -25,7 +26,7 @@ public class PushNotifyTestCases extends BaseClass {
 		pn.clickSubmit();
 		String actual = pn.alertText();
 
-		String expected = "Alert!";
+		String expected = Constants.manageTabExpectedResult;
 		Assert.assertEquals(actual, expected, "Actual and expected result not matching");
 	}
 }

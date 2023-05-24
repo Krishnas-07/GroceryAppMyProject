@@ -18,21 +18,21 @@ public class LoginTestcases extends BaseClass {
 		lp.enterUsername(ExcelReadUtils.read("Sheet1",1, 0));
 		lp.enterPassword(ExcelReadUtils.read("Sheet1",1, 1));
 		lp.clickSignIn();
-		String expected = "Home";
+		String expected = ExcelReadUtils.read("Sheet1", 2, 1);
 		String actual = lp.homeButtonText();
-		Assert.assertEquals(actual, expected, "Not matching actual and expected result");
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void verifyTextOfSignInButtonInLoginPage() {
 		lp = new LoginPage(driver);
 		String actual = lp.signInButtonText();
-		String expected = "Sign In";
-		Assert.assertEquals(actual, expected, "Not matching actual and expected Result");
+		String expected = ExcelReadUtils.read("Sheet1", 3, 1);
+		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void verifyBackgroundColourOfSignInButton() {
 		lp = new LoginPage(driver);
 		String actual = lp.backgroundColourOfSignInButton();
@@ -41,18 +41,16 @@ public class LoginTestcases extends BaseClass {
 
 	}
 
-	@Test(enabled = false, dataProvider = "loginSucess", dataProviderClass = DataProviderTestcase.class)
+	@Test(enabled = true, dataProvider = "loginSucess", dataProviderClass = DataProviderTestcase.class)
 	public void verifyTheAlertMessageforWrongUserDetails(String name, String name1) {
 		lp = new LoginPage(driver);
 		lp.performLogin(name, name1);
 		String actual=lp.alertText();
 		System.out.println(actual);
-		String expected="×\n"
-				+ "Alert!\n"
-				+ "Invalid Username/Password";
+		String expected=Constants.errorMsgForLogin;
 		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 		
 
 	}
-
+	
 }

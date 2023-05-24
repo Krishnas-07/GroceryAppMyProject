@@ -25,7 +25,7 @@ public class LoginPage {
 
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement signIn;
-	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']//h5")
 WebElement alert;
 	public void enterUsername(String name) {
 		userName.sendKeys(name);

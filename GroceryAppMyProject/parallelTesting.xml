@@ -2,7 +2,12 @@
 	<test name="ChromeTest">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="testCases.PushNotifyTestCases"></class>
+			<class name="testCases.LoginTestcases"></class>
+			<methods>
+				<include name="verifyTheAlertMessageforWrongUserDetails"></include>
+				<include name="verifyBackgroundColourOfSignInButton"></include>
+				<include name="verifyLoginUsingRandomGenerator"></include>
+			</methods>
 		</classes>
 	</test>
 	<test name="EdgeTest">

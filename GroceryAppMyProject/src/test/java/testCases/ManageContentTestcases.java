@@ -25,7 +25,7 @@ public class ManageContentTestcases extends BaseClass {
 		mc.insertPicture();
 		mc.clickSubmit();
 		String actual = mc.alertMsg();
-		String expected = "Alert!";
+		String expected = Constants.manageTabExpectedResult;
 		Assert.assertEquals(actual, expected, Constants.errorMsgAssertion);
 	}
 
