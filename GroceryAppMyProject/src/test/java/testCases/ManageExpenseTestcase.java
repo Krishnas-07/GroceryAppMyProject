@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import constants.Constants;
 import elementRepositary.LoginPage;
 import elementRepositary.ManageExpense;
+import utilities.ExcelReadUtils;
 
 public class ManageExpenseTestcase extends BaseClass {
 	LoginPage lp;
@@ -14,7 +15,7 @@ public class ManageExpenseTestcase extends BaseClass {
 	@Test(enabled = false)
 	public void verifyUserCanAddExpenseCategory() {
 		lp = new LoginPage(driver);
-		lp.performLogin("admin", "admin");
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		me = new ManageExpense(driver);
 		me.clickManageExpense();
 		me.clickExpeneseCategory();
@@ -30,7 +31,7 @@ public class ManageExpenseTestcase extends BaseClass {
 	@Test(enabled = false)
 	public void verifySearchButton() {
 		lp = new LoginPage(driver);
-		lp.performLogin("admin", "admin");
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		me = new ManageExpense(driver);
 		me.clickManageExpense();
 		me.listExpensePage();
@@ -47,7 +48,7 @@ public class ManageExpenseTestcase extends BaseClass {
 
 	public void verifyTheTextInShowDetailsButton() {
 		lp = new LoginPage(driver);
-		lp.performLogin("admin", "admin");
+		lp.performLogin(ExcelReadUtils.read("Sheet1",1, 0), ExcelReadUtils.read("Sheet1",1, 1));
 		me = new ManageExpense(driver);
 		me.clickManageExpense();
 		me.listExpensePage();

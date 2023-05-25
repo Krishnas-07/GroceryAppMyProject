@@ -20,9 +20,9 @@ public class ManageContent {
 
 	}
 
-	@FindBy(xpath = "(//a[@class='nav-link']//p)[10]")
+	@FindBy(xpath = "(//a[@class='nav-link']//p)[12]")
 	WebElement manageContent;
-	@FindBy(xpath = "(//a[@class='nav-link']//p)[11]")
+	@FindBy(xpath = "(//a[@class='nav-link']//p)[13]")
 	WebElement managePages;
 	@FindBy(id = "main_img")
 	WebElement chooseFile;

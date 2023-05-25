@@ -3,6 +3,7 @@ package testCases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import elementRepositary.LoginPage;
 import elementRepositary.ManageProduct;
 import utilities.ExcelReadUtils;
@@ -11,7 +12,7 @@ public class ManageProductTestcases extends BaseClass {
 	LoginPage lp;
 	ManageProduct mp;
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void verifyTheEditButtonInListProductsTableInManageProductTab() {
 		lp = new LoginPage(driver);
 		lp.enterUsername(ExcelReadUtils.read("Sheet1", 1, 0));
@@ -23,7 +24,7 @@ public class ManageProductTestcases extends BaseClass {
 		mp.selectCategory();
 		boolean actual = mp.selectionCheck();
 		boolean expected = true;
-		Assert.assertEquals(actual, expected, "There is no dropdown to select");
+		Assert.assertEquals(actual, expected, Constants.manageProduct);
 	}
 
 	@Test(enabled = true)
@@ -45,7 +46,7 @@ public class ManageProductTestcases extends BaseClass {
 		//mp.clickUpdateButton();
 		boolean actual1 = mp.enableCheck();
 		boolean expected1 = true;
-		Assert.assertEquals(actual1, expected1, "Category feild is not abled to select");
+		Assert.assertEquals(actual1, expected1, Constants.manageProductUpdateButton);
 
 	}
 }

@@ -9,6 +9,8 @@ public class Constants {
 	public static final String manageTabExpectedResult="Alert!";
 	public static final String manageUserTestcase=".........RESULT NOT FOUND.......";
 	public static final String manageLargeImage="Image is too large of a file.";
+	public static final String manageProduct="There is no dropdown to select";
+	public static final String manageProductUpdateButton="Category feild is not able to select";
 			
 			
 }
